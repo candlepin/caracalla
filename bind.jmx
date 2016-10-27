@@ -24,17 +24,17 @@
           </elementProp>
           <elementProp name="SCRIPT_PATH" elementType="Argument">
             <stringProp name="Argument.name">SCRIPT_PATH</stringProp>
-            <stringProp name="Argument.value">/home/jenkins/caracalla</stringProp>
+            <stringProp name="Argument.value">/home/vrjain/Code/caracalla</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="pool_id" elementType="Argument">
             <stringProp name="Argument.name">pool_id</stringProp>
-            <stringProp name="Argument.value">ff80808157a04d750157a06530480f02</stringProp>
+            <stringProp name="Argument.value">ff8080815804eb6b015804ebe166082f</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="owner" elementType="Argument">
             <stringProp name="Argument.name">owner</stringProp>
-            <stringProp name="Argument.value">candlepin_admin</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="fileExists" elementType="Argument">
@@ -101,16 +101,13 @@ String DirPath = FileServer.getFileServer().getBaseDir();
 
 // write into jmeter.log file under Jmeter/bin directory
   File f = new File(DirPath+&quot;/consumer_list.csv&quot;);
-
   if (!(f.exists())) {
      fileExists=&quot;false&quot;;
-
 	FileOutputStream c = new FileOutputStream(FileServer.getFileServer().getBaseDir()+&quot;/consumer_list.csv&quot;, true); 
 
 	c.close();
   }else if((f.exists()) &amp;&amp; (f.length()==0)){
      fileExists=&quot;false&quot;;
-
   }}catch(Throwable ex) {
     log.error(&quot;Beanshell failure: &quot;, ex);
     throw ex;
@@ -122,7 +119,7 @@ String DirPath = FileServer.getFileServer().getBaseDir();
         </BeanShellSampler>
         <hashTree/>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-          <stringProp name="IfController.condition">&quot;${fileExists}&quot;==&quot;true&quot;</stringProp>
+          <stringProp name="IfController.condition">${fileExists}</stringProp>
           <boolProp name="IfController.evaluateAll">false</boolProp>
           <boolProp name="IfController.useExpression">true</boolProp>
         </IfController>
@@ -203,7 +200,8 @@ String DirPath = FileServer.getFileServer().getBaseDir();
 uuid_1 = vars.get(&quot;consumer_uuid_1&quot;);
 script_path = vars.get(&quot;SCRIPT_PATH&quot;);
 
-String script_file = script_path + &quot;consumer_list.csv&quot;;
+String script_file = script_path + &quot;/consumer_list.csv&quot;;
+
 
 // Overwrite any existing file
 FileWriter fstream = new FileWriter(script_file, false);

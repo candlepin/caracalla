@@ -13,7 +13,7 @@ Currently caracalla houses utilities to performance test candlepin/server.
      * Select a pool generated from the above step and ensure it has a quantity of atleast 100
      * Open the jmx file in jmeter 3.0(+)
      * Select the node marked Entitlement creation and override the variables to point to your local candlepin
-     * Consumers are created only once , if you wish to create consumers again , then please change the value of the User Defined Variable "ForceCreateConsumerFile"  to true
+     * Consumers are created only once , if you wish to create consumers again , then please change the value of the User Defined Variable "ForceCreateConsumerFile"  to true 
      * run the jmeter test and observe the results.
  * candlepin-throughput.jmx
    * This test measures throughput of various candlepin REST APIs based on specified throughput ratios.

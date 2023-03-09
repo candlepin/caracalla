@@ -5,6 +5,6 @@ git_dir: /tmp/github_caracalla
 
 caracalla_git_repo: https://github.com/candlepin/caracalla.git
 caracalla_checkout: /home/jenkins/caracalla
-caracalla_branch: master
+caracalla_branch: main
 
 perf_results_dir: /home/jenkins/perf_test_results

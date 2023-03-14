@@ -20,7 +20,7 @@ Currently caracalla houses utilities to performance test candlepin/server.
  * For each test, we need:
    * a new folder for the test's jmx file and all its resources
    * a csv_config.json file which is parsed by generate-csv.py to create csvs for a test against a database
-   * a baseline.dict file to track master's perfomance on the same test
+   * a baseline.dict file to track main's perfomance on the same test
    * an expected.dict file where we control our success criteria for each API
    * a properties file where we control test parameters and override values of variables we may not want to opensource
    * A jmeter test file.
@@ -49,7 +49,7 @@ Currently caracalla houses utilities to performance test candlepin/server.
 
 * If a test fails on jenkins, it is not necessarily an issue.
 * The author of the PR needs to investigate why the test fails.
-  * if it fails at the last step where we evaluate the results, it may not be an issue. please copy the results to the google doc and compare the results with master. if its okay with the reviewer, it may be merged.
+  * if it fails at the last step where we evaluate the results, it may not be an issue. please copy the results to the google doc and compare the results with main. if its okay with the reviewer, it may be merged.
   * if it fails before that step, we have either a test setup issue or an issue in the candlepin branch itself, we need to investigate.
 
 
